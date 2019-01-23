@@ -1,0 +1,27 @@
+.icon-box {
+
+	&:hover {
+		.icon-text {
+			opacity: 1;
+		}	
+	}
+	.icon-text {
+		opacity: 0;
+		transition: all 0.2s ease;
+	}
+	.icon-image {
+
+	}
+}  
+
+.t-wrapper {
+	max-width:300px;
+	margin:auto;
+} 
+
+section.page-404, section.page-search {
+	margin: 150px 0;
+	@include media-breakpoint-down(sm) {
+		margin: 100px 0;
+	}
+}

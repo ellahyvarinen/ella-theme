@@ -1,0 +1,82 @@
+a {
+	color: $pink;
+	&:hover {
+		color: $pink;
+		text-decoration: none;
+	}
+}
+a.highlight {
+	
+	position: relative;
+	display: inline-block;
+	transition: all 0.5 ease-in-out;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 1px;
+		width: 100%;
+		background: $pink;
+		opacity: 0;
+		bottom: -10px;
+
+		bottom: -1px;
+		opacity: 1;
+	}
+
+} 
+
+
+
+.elementor-btn {
+	margin-top: 50px;
+	a {
+		position: relative;
+		border: 1px solid $pink;
+		border-radius: 0 !important;
+		background-color: transparent !important;
+		padding: 20px 30px !important;
+		height: 55px;
+		width: 200px;
+		transition: all 0.5s ease-in-out;
+
+		span {
+			text-transform: uppercase;
+			font-family: $raleway !important;
+			font-weight: 200;
+			letter-spacing: 1px;
+			font-size: 14px;
+			color: $dark;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: inherit;
+			height: inherit;
+			border: 1px solid $pink;
+			transition: all 0.3s ease-in-out;
+		}
+
+
+		&:hover {
+			text-decoration: none;
+			background-color: $pink !important;
+			&:after {
+				/*
+				top: 0;
+				left: 0;
+				opacity: 0;
+				display: none;
+				*/
+			}
+			span {
+				color: $white;
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+svg .path {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear forwards infinite;
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+
+@keyframes bgGradient { 
+	0%{background-position:0% 50%}
+	50%{background-position:100% 50%}
+	100%{background-position:0% 50%}
+}
+
+
+.scale-hover {
+	transition: transform 0.5s ease;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+} 
+
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.rotate {
+	animation: rotate 10s linear infinite;
+}
+
+
+@keyframes jump {
+	0% {
+		transform: translateY(0px);
+	}
+	25% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.jump {
+	animation: jump 3s linear infinite;
+}
+
+
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.pulse {
+	animation: pulse 3s ease-in-out infinite;
+}
+
+
+
+

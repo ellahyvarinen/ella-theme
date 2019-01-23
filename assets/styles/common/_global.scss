@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+} 
+
+body {
+	//cursor: url(../images/Oval.svg), auto;
+	font-family: $text-font;
+	font-size: 16px;
+
+	//Sticky footer
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.bg-img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+p {
+	font-size: 16px;
+	font-family: $text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $heading-font;
+	font-weight: 900; //bold
+	color: $dark;
+}
+
+
+
+.custom-cursor {
+	//cursor: url(../images/Oval.svg), auto;
+}
+
+.scroll-down {
+	text-align: center;
+	hr {
+		border: none;
+		color: $white;
+		border-left: 1px solid;
+		height: 50px;
+		margin: auto;
+		opacity: 0.4;
+		width: 2px;
+	}
+	span {
+		text-transform: uppercase;
+		color: $white;
+		font-size: 12px;
+		margin-top: 10px;
+		display: block;
+	}
+
+	&:hover {
+		hr {
+			opacity: 0.7;
+		}
+	}
+}
+
+.particles-js {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
