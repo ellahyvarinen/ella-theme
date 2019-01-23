@@ -1,7 +1,20 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+#Dist
 dist
+
+#Bower
 bower_components
+
+# Dependency directories
+
+
+#Node
+logs
+*.log
 node_modules
 npm-debug.log
+
+#Vendor
 vendor
