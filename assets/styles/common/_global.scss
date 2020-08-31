@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 } 
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	//cursor: url(../images/Oval.svg), auto;
 	font-family: $text-font;
@@ -10,30 +14,12 @@ body {
 	//Sticky footer
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 
 }
 
 img {
 	width: 100%;
 	height: auto;
-}
-
-.bg-img {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-p {
-	font-size: 16px;
-	font-family: $text-font;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $heading-font;
-	font-weight: 900; //bold
-	color: $dark;
 }
 
 
@@ -77,3 +63,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+.bg-img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg--image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}

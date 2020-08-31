@@ -98,7 +98,7 @@ function display_sidebar() {
  */
 function assets() {
   //Google fonts
-  wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Assistant:800|Poppins:200,300,400|Quicksand:300,400|Raleway:300,900|Anton|Roboto:900|Montserrat:400,700&amp;subset=latin-ext', false, null );
+  wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Assistant:800|Poppins:200,300,400|Quicksand:300,400|Karla:400,700|Anton|Roboto:400,900|Montserrat:400,700&amp;subset=latin-ext', false, null );
   //Main css
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
 
@@ -114,4 +114,118 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 
 
+
+
+
+function my_acf_op_init() {
+
+    // Check function exists.
+  if( function_exists('acf_add_options_page') ) {
+
+        // Add parent.
+    $parent = acf_add_options_page(array(
+      'page_title'  => __('Theme General Settings'),
+      'menu_title'  => __('Theme Settings'),
+      'redirect'    => false,
+    ));
+
+        // Header
+    $child = acf_add_options_page(array(
+      'page_title'  => __('Header'),
+      'menu_title'  => __('Header'),
+      'parent_slug' => $parent['menu_slug'],
+    ));
+        // Footer
+    $child = acf_add_options_page(array(
+      'page_title'  => __('Footer'),
+      'menu_title'  => __('Footer'),
+      'parent_slug' => $parent['menu_slug'],
+    ));
+  }
+}
+add_action('acf/init', __NAMESPACE__ . '\\my_acf_op_init');
+
+
+
+
+
+/**
+  * Init custom formatting menut
+  * Callback function to insert 'styleselect' into the $buttons array
+*/
+function my_mce_buttons_2( $buttons ) {
+  array_unshift( $buttons, 'styleselect' );
+  return $buttons;
+}
+add_filter( 'mce_buttons_2', __NAMESPACE__ . '\\my_mce_buttons_2' ); // Register our callback to the appropriate filter
+
+
+
+/**
+* Add custom formats to TinyMCE
+*/
+function my_mce_before_init_insert_formats( $init_array ) {
+  // Define the style_formats array
+  $style_formats = array(
+    // Each array child is a format with it's own settings
+    array(
+      'title' => 'Primary Button',
+      'block' => 'span',
+      'classes' => 'btn btn--primary',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Secondary Button',
+      'block' => 'span',
+      'classes' => 'btn btn--secondary',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Tertiary Button',
+      'block' => 'span',
+      'classes' => 'btn btn--tertiary',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Text Link',
+      'block' => 'span',
+      'classes' => 'link link--primary',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Big Text',
+      'block' => 'span',
+      'classes' => 'highlight-text',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Quote',
+      'block' => 'span',
+      'classes' => 'quote',
+      'wrapper' => true,
+    ),
+    array(
+      'title' => 'Quote Italic',
+      'block' => 'span',
+      'classes' => 'quote italic',
+      'wrapper' => true,
+    ),
+  );
+  // Insert the array, JSON ENCODED, into 'style_formats'
+  $init_array['style_formats'] = json_encode( $style_formats );
+  return $init_array;
+}
+add_filter( 'tiny_mce_before_init', __NAMESPACE__ . '\\my_mce_before_init_insert_formats' ); // Attach callback to 'tiny_mce_before_init'
+
+
+
+/**
+ * Add more image sizes
+*/
+
+function aw_custom_add_image_sizes() {
+    add_image_size( 'square', 500, 500, array( 'center', 'center' ) );
+    add_image_size( 'xlarge', 2000, 1200, array( 'center', 'center' ) );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\aw_custom_add_image_sizes' );
 

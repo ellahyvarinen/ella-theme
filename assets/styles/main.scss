@@ -18,6 +18,14 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 
+@import "common/typography";
+
+@import "partials/highlight";
+@import "partials/projects";
+@import "partials/hero-element";
+@import "partials/blocks";
+
+
 //Custom
 @import "custom/animations";
 @import "custom/diamond";

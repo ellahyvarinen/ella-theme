@@ -1,0 +1,56 @@
+
+.entry__categories {
+	text-transform: uppercase;
+	color: $accent;
+	font-size: 14px;
+	margin-right: 8px;
+}
+
+.entry__title {}
+
+.entry__content {
+	a {
+		@extend .link--primary;
+	}
+}
+
+.blog-posts {}
+
+
+.post .post-content img {
+	width: 120%;
+	margin-left: -10%;
+	max-width: unset;
+	@media #{$screen-sm} {
+		width: 100%;
+		margin-left: unset;
+		max-width: 100%;
+	}
+}
+
+
+.gist {
+
+	div[class^='p'], div[class*=' p']{
+		padding: 0 !important;
+	}
+	
+}
+
+
+.full-width--image {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 1440px; //100vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
+}
+
+
+body.single-project {
+	.entry__content img {
+		//@extend .full-width--image;
+	}
+} 

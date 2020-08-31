@@ -36,6 +36,10 @@
           $( this ).toggleClass('active');
         });
 
+
+        new WOW().init();
+
+
         
         //particlesJS.load('night-sky', '../wp-content/themes/ella-theme/assets/scripts/nightsky.json', function() {
           /*

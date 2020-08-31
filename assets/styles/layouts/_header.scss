@@ -6,6 +6,16 @@ header.banner {
 	left: 0;
 	right: 0;
 	z-index: 10;
+	@include media-breakpoint-down(sm) {
+		padding: 10px 0;
+	}
+
+	.header-logo {
+		img {
+			height: 40px; //32px;
+			width: auto;
+		}
+	}
 
 	nav {
 		
@@ -19,73 +29,30 @@ header.banner {
 			li {
 				//margin-left: 50px;
 				a {
-					color: $dark;
-					text-transform: uppercase;
+					color: $white;
+					//text-transform: uppercase;
 
 					&:hover {
+						color: $link-color;
 						text-decoration: none;
 					}
 				}
 			}
 		}
 	}
-	.logo-by-ella {
-		position: relative;
-		z-index: 100;
-		border: 1px solid $pink;
-		width: 40px;
-		height: 40px;
-		transform: rotate(45deg);
-		transition: all 0.2s ease;
 
-		span {
-			position: absolute;
-			border: 1px solid $pink;
-			width: 20px;
-			height: 20px;
-			transition: all 0.2s ease-in-out;
+	#menu {
+		position: fixed;
+		right: 0;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 15px;
+		list-style-type: none;
+		text-align: right;
 
-			&:nth-child(1) {
-				top: 0;
-				left: 0;
-			}
-			&:nth-child(2) {
-				top: 0;
-				right: 0;
-			}
-			&:nth-child(3) {
-				bottom: 0;
-				left: 0;
-			}
-			&:nth-child(4) {
-				bottom: 0;
-				right: 0;
-			}
-		}
-
-		&:hover {
-			border: 2px solid $pink;
-
-			span {
-				border: 2px solid $pink;
-			}
-		}
-	}
-
-	#nav-by-ella {
-
-		#menu {
-			position: fixed;
-			right: 0;
-			left: 0;
-			top: 0;
-			width: 100vw;
-			height: 100vh;
-			margin: 0;
-			padding: 50px;
-			list-style-type: none;
-			text-align: center;
-			
 /*
 			background: linear-gradient(300deg, $dark, #000);
 			background-size: 400% 400%;
@@ -101,14 +68,12 @@ header.banner {
 
 			li {
 				padding: 10px 0;
-				font-size: 20px;
+				font-size: 2em;
 				width: 100%;
 				display: block;
 				opacity: 0;
 				transition: all 0.3s ease-in-out;
 				a {
-					font-family: $raleway;
-					color: $pink;
 					position: relative;
 					display: inline-block;
 					transition: all 0.3s ease-in-out;
@@ -121,12 +86,11 @@ header.banner {
 						left: 0;
 						right: 0;
 						bottom: -5px;
-						background-color: $pink;
+						background-color: inherit;
 						opacity: 0;
 						transition: all 0.3s ease-in-out;
 					}
 					&:hover {
-						color: $pink;
 						&:after {
 							opacity: 1;
 							bottom: -1px;
@@ -135,19 +99,18 @@ header.banner {
 				}
 			}
 		}
-	}
 
 
-	/* Banner is active */
-	&.active {
+		/* Banner is active */
+		&.active {
 
-		#night-sky {
-			visibility: visible;
-		}
+			#night-sky {
+				visibility: visible;
+			}
 		/*
 		* Slide menu from left
 		*/
-		#nav-by-ella #menu {
+		#menu {
 			transform: none;
 			//transition-delay: 1s;
 			li {
@@ -157,7 +120,7 @@ header.banner {
 				@for $i from 0 to $elements {
 					&:nth-child(#{$i + 1}) {
 						//transition-delay: 1 + $i * 0.5s; /*#{$i}s;*/
-						transition-delay: $i * 0.25s;
+						transition-delay: $i * 0.1s;
 					}
 				}
 
@@ -207,59 +170,72 @@ header.banner {
  */
  #hamburger {
  	cursor: pointer;
- 	width: 30px;
- 	height: 30px;
+ 	width: 80px;
+ 	height: 80px;
+ 	padding: 20px;
  	display: block;
  	z-index: 100;
  	position: fixed;
- 	top: 30px;
+ 	top: 0;
+ 	right: 0;
+ 	background-color: $accent;
+
  	@include media-breakpoint-down(sm) {
- 		right: 15px;
- 		top: 30px;
+ 		width: 60px;
+ 		height: 60px;
+ 		padding: 10px;
  	}
+
+ 	.wrapper {
+ 		position: relative;
+ 		margin-top: -5px;
+ 	}
+
  	span {
  		display: block;
- 		z-index: 100;
-
- 		width: 30px;
- 		height: 2px;
- 		margin-bottom: 8px;
- 		position: relative;
- 		background: $pink;
+ 		width: 40px;
+ 		height: 3px;
+ 		margin: 10px 0;
+ 		background: $dark;
  		border-radius: 0;
- 		transition: all 0.5s ease-in-out;
+ 		transition: all 0.15s ease-in-out;
+
+ 		&:first-child {
+ 		}
+
  	}
 
  	&.active {
  		span {
- 			opacity: 1;
- 			background: $pink !important;
+ 			//opacity: 1;
 
- 			&:nth-last-child(1) {
- 				transform: rotate(44deg);
- 				transform-origin: bottom right;
+ 			&:first-child {
+ 				transform: rotate(-45deg);
+ 				transform-origin: right;
+ 				width: 45px;
+ 				margin-left: -10px;
  			}
- 			&:nth-last-child(3) {
- 				transform: rotate(-44deg);
- 				transform-origin: top right;
+ 			&:last-child {
+ 				transform: rotate(45deg);
+ 				transform-origin: right;
+ 				width: 45px;
+ 				margin-left: -10px;
  			}
 
- 			&:nth-last-child(2) {
- 				opacity: 0;
- 				//transform: rotate(0deg) scale(0.2, 0.2);
+ 			&:nth-child(2) {
+ 				//opacity: 0;
  			}
 
  		}
  	}
+
  }
 
 
 
  body.home {
  	header {
- 		#nav-by-ella span {
- 			background: $white;
- 		}
+
  		.logo-by-ella {
  			border: 1px solid $white;
 
@@ -275,5 +251,48 @@ header.banner {
  			}
  		}
 
+ 	}
+ }
+
+ .logo-by-ella {
+ 	position: relative;
+ 	z-index: 100;
+ 	border: 1px solid $pink;
+ 	width: 40px;
+ 	height: 40px;
+ 	transform: rotate(45deg);
+ 	transition: all 0.2s ease;
+
+ 	span {
+ 		position: absolute;
+ 		border: 1px solid $pink;
+ 		width: 20px;
+ 		height: 20px;
+ 		transition: all 0.2s ease-in-out;
+
+ 		&:nth-child(1) {
+ 			top: 0;
+ 			left: 0;
+ 		}
+ 		&:nth-child(2) {
+ 			top: 0;
+ 			right: 0;
+ 		}
+ 		&:nth-child(3) {
+ 			bottom: 0;
+ 			left: 0;
+ 		}
+ 		&:nth-child(4) {
+ 			bottom: 0;
+ 			right: 0;
+ 		}
+ 	}
+
+ 	&:hover {
+ 		border: 2px solid $pink;
+
+ 		span {
+ 			border: 2px solid $pink;
+ 		}
  	}
  }

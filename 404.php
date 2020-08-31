@@ -1,10 +1,14 @@
-<?php get_header(); ?>
-<section class="page-404">
+<?php //get_header(); ?>
+<section class="page-404 theme--secondary padding--medium">
 	<div class="container">
 		<div class="row">
+			<div class="col-12">
+				<span class="subheading">404</span>
+			</div>
 			<div class="col-md-6">
-				<h2>Ooooops. Sorry. </h2>
-				<p>The page you are looking for is MIA. Try some other page instead or go <a href="<?= esc_url(home_url('/')); ?>" class="highlight">home.</a></p>
+				<?php get_template_part('templates/page', 'header'); ?>
+
+				<p>Ooooops. Sorry. The page you are looking for could not be found. Try search or go <a href="<?= esc_url(home_url('/')); ?>" class="link link--primary">home.</a></p>
 				<br />
 				<?php get_search_form(); ?>
 			</div>
@@ -12,4 +16,4 @@
 		</div>
 	</div>
 </section>
-<?php get_footer(); ?>
+<?php //get_footer(); ?>

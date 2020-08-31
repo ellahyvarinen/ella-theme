@@ -2,50 +2,25 @@
 .search-form {
 	@extend .form-inline;
 }
-.search-form label {
-	font-weight: normal;
-	@extend .form-group;
-}
-.search-form .search-field {
-	@extend .form-control;
-}
-.search-form .search-submit {
-	@extend .btn;
-	@extend .btn-secondary;
+
+
+[type="text"], [type="email"], [type="search"], textarea {
+	border-radius: 0;
+	border: 2px solid $dark;
+	width: 100%;
+	padding: 10px 5px;
+	margin-bottom: 1em;
+	font-size: 14px;
+	outline: none;
 }
 
-input, textarea {
-	border-radius: 0 !important;
-	border: 1px solid $dark !important;
-	width: 100% !important;
-	padding: 10px 5px !important;
-	margin-bottom: 1em !important;
-	font-size: 14px !important;
-}
 label {
 	width: 100%;
 	font-size: 14px;
+	text-transform: uppercase;
 }
 
 input[type="submit"] {
-
-	position: relative;
-	border: 1px solid $pink !important;
-	border-radius: 0 !important;
-	background-color: transparent !important;
-	height: 55px;
-	width: 200px !important;
-	text-transform: uppercase;
-	font-family: $raleway !important;
-	font-weight: 200 !important;
-	letter-spacing: 1px !important;
-	font-size: 14px !important;
-	color: $dark !important;
-	transition: all 0.5s ease-in-out;
-
-	&:hover {
-		text-decoration: none;
-		background-color: $pink;
-		color: $white;
-	}
+	@extend .btn;
+	@extend .btn--primary;
 }

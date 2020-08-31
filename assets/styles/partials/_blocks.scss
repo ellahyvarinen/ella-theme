@@ -1,0 +1,90 @@
+.nav-tabs {
+	
+	border-bottom: 2px solid $accent;
+
+	.nav-link {
+		border-radius: 0;
+		border: 2px solid transparent;
+		margin-bottom: -2px;
+		&.active {
+			border-color: $accent $accent #fff;
+		}
+	}
+	
+}
+
+
+.block-collapse {
+	.accordion {
+		/*
+		.chevron {
+			width: 20px;
+			&:before {
+				border-style: solid;
+				border-width: 0.25em 0.25em 0 0;
+				content: '';
+				display: inline-block;
+				height: 0.45em;
+				left: 0.15em;
+				position: relative;
+				vertical-align: top;
+				width: 0.45em;
+
+				top: 0;
+				transform: rotate(135deg);
+			}
+		}
+		*/
+		.card {
+			border: none;
+			border-bottom: 1px solid $dark !important;
+			border-radius: 0;
+			background-color: unset;
+			padding: 0;
+		}
+
+		.card-header {
+			cursor: pointer;
+			margin: 0;
+			padding: 20px 0;
+			border: none;
+			border-radius: 0;
+			background-color: unset;
+
+			h3 {
+				margin: 0;
+				display: block;
+				position: relative;
+
+				&:after {
+					content: '';
+					border-style: solid;
+					//border-width: 0.25em 0.25em 0 0;
+					border-width: 0.15em 0.15em 0 0;
+					display: inline-block;
+					height: 0.45em;
+					width: 0.45em;
+					//left: 0.15em;
+					position: absolute;
+					right: 0.15em;
+
+					top: 0.15em;
+					transform: rotate(135deg);
+
+					//transition: 0.1s ease-in-out;
+				}
+			}
+
+		}
+
+		.card-header h3[aria-expanded="true"]::after {
+			//top: 0.15em;
+			transform: rotate(-45deg);
+		}
+
+		.card-body {
+			padding: 20px 0;
+		}
+
+	}
+}

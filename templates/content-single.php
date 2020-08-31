@@ -2,24 +2,36 @@
   <article <?php post_class(); ?>>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
 
+        <div class="col-md-8 offset-md-2">
           <div class="post-header">
-            <h1 class="title"><?php the_title(); ?></h1>
-            <p><?php the_date(); ?></p>
+            <span class="entry__categories"><?php the_category(','); ?></span>
+            <span class="entry__date"><?php the_date(); ?></span>
+            <h1 class="entry__title"><?php the_title(); ?></h1>
           </div>
-
-          <div class="post-content">
-            <?php the_content(); ?>
-          </div>
-
-          <div class="post-footer">
-            <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-            <?php //comments_template('/templates/comments.php'); ?>
-          </div>
-          
         </div>
+
+        <?php if ( has_post_thumbnail() ) : ?>
+          <div class="col-12 padding--small-bottom">
+           <?php the_post_thumbnail('large'); ?>
+         </div>
+       <?php endif; ?>
+
+       <div class="col-md-8 offset-md-2">
+        <?php if ( has_excerpt() ) : ?><div class="entry__excerpt quote padding--small-bottom"><?php echo get_the_excerpt(); ?></div><?php endif; ?>
+
+        <div class="entry__content">
+          <?php the_content(); ?>
+        </div>
+
+        <div class="post-footer padding--large">
+          <?php //comments_template('/templates/comments.php'); ?>
+          <?php //echo get_the_author(); ?>
+        </div>
+
       </div>
+
     </div>
-  </article>
+  </div>
+</article>
 <?php endwhile; ?>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padding--medium">
 	<div class="row">
 		<div class="col-md-12">
 

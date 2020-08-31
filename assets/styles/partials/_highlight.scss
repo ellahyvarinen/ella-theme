@@ -1,0 +1,35 @@
+.block-highlight {
+	//min-height: 100vh;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	&.theme {
+		&--dark .block-highlight__wrapper {
+			border-color: $white;
+		}
+
+	}
+
+	&__wrapper {
+		padding: 7% 4.5%;
+		position: relative;
+		width: 100%;
+		border: 2px solid;
+	}
+	&__title {}
+
+
+	@media #{$screen-sm} {
+		//min-height: unset;
+	}
+
+}
+
+.highlight-text {
+	font-family: $heading-font;
+	font-size: 4vw;
+
+	@media #{$screen-sm} {
+		font-size: 7vw;
+	}
+}
