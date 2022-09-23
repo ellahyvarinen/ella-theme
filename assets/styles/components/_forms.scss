@@ -1,0 +1,26 @@
+// Search form
+.search-form {
+	@extend .form-inline;
+}
+
+
+[type="text"], [type="email"], [type="search"], textarea {
+	border-radius: 0;
+	border: 2px solid $dark;
+	width: 100%;
+	padding: 10px 5px;
+	margin-bottom: 1em;
+	font-size: 14px;
+	outline: none;
+}
+
+label {
+	width: 100%;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+input[type="submit"], input[type="button"] {
+	@extend .btn;
+	@extend .btn--primary;
+}

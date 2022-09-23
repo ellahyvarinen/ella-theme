@@ -1,0 +1,59 @@
+article#waves {
+	section.work-art {
+		position: relative;
+		overflow: hidden;
+
+		.waves {
+			position: absolute;
+			height: 40vh;
+			//background: rgba(0,0,0,0.9);
+			width: 6000px;
+
+			background: url(../images/wave-5.svg) repeat-x;
+			//background: url(../images/wave_1px.svg) repeat-x;
+			background-position: bottom;
+			//animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+			animation: wave 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.waves:nth-of-type(0) {
+			bottom: 50px;
+		}
+
+		.waves:nth-of-type(1) {
+			animation: wave 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) -.125s infinite, swell 7s ease -1.25s infinite;
+			bottom: 40px;
+		}
+		.waves:nth-of-type(2) {
+			animation: wave 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) -.155s infinite, swell 7s ease -1.55s infinite;
+			bottom: 30px;
+		}
+		.waves:nth-of-type(3) {
+			animation: wave 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) -.165s infinite, swell 7s ease -1.65s infinite;
+			bottom: 20px;
+		}
+		.waves:nth-of-type(4) {
+			animation: wave 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) -.195s infinite, swell 7s ease -1.95s infinite;
+			bottom: 10px;
+		}
+
+		@keyframes wave {
+			0% {
+				margin-left: 0;
+			}
+			100% {
+				margin-left: -1500px;
+			}
+		}
+
+		@keyframes swell {
+			0%, 100% {
+				transform: translate3d(0,-25px,0);
+			}
+			50% {
+				transform: translate3d(0,5px,0);
+			}
+		}
+	}
+}

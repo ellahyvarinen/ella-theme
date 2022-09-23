@@ -1,0 +1,76 @@
+* {
+	box-sizing: border-box;
+} 
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	//cursor: url(../images/Oval.svg), auto;
+	font-family: $text-font;
+	font-size: 16px;
+
+	//Sticky footer
+	display: flex;
+	flex-direction: column;
+
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+.custom-cursor {
+	//cursor: url(../images/Oval.svg), auto;
+}
+
+.scroll-down {
+	text-align: center;
+	hr {
+		border: none;
+		color: $white;
+		border-left: 1px solid;
+		height: 50px;
+		margin: auto;
+		opacity: 0.4;
+		width: 2px;
+	}
+	span {
+		text-transform: uppercase;
+		color: $white;
+		font-size: 12px;
+		margin-top: 10px;
+		display: block;
+	}
+
+	&:hover {
+		hr {
+			opacity: 0.7;
+		}
+	}
+}
+
+.particles-js {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+
+.bg-img {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.bg--image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}

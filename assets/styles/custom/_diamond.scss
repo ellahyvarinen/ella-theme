@@ -1,0 +1,182 @@
+.diamond-narrow {
+	width: 0;
+	height: 0;
+	border: 40px solid transparent;
+	border-bottom: 60px solid $accent;
+	position: relative;
+	top: -40px;//-50px;
+	z-index: -1;
+	&:after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: -40px;//-50px;
+		top: 60px;
+		border: 40px solid transparent;
+		border-top: 60px solid $accent;
+	}
+}
+
+.diamond-cut {
+	border-style: solid;
+	border-color: transparent transparent $accent transparent;
+	border-width: 0 25px 30px;
+	height: 0;
+	width: 50px;
+	box-sizing: content-box;
+	position: relative;
+	margin: 0px 0 70px 0;
+	z-index: -1;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 30px;
+		left: -25px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color: $accent transparent transparent transparent;
+		border-width: 70px 50px 0 50px;
+	}
+}
+
+.circle {
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	background-color: $accent;
+	z-index: -1;
+}
+
+
+.bolt {
+	position: relative;
+	height: 100px;
+	width: 100px;
+	z-index: -1;
+	&:before, &:after {
+		color: transparent;
+		content: "";
+		position: absolute;
+		display: block;
+		box-sizing: border-box;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 25px 0 0;
+		border-color: transparent $accent transparent transparent;
+		border-top: 70px solid;
+		background-color: transparent;
+	}
+	&:before {
+		top: 0;//-0.0625em;
+		left: 10px;
+		transform: rotate(15deg);
+	}
+	&:after  {
+		top: 50px;//0.4375em;
+		left: 20px;
+		transform: rotate(195deg);
+	}
+}
+
+
+
+
+section.diamond {
+	padding: 100px 0;
+	height: 100vh;
+	//background-color: $dark;
+	color: $white;
+	background: linear-gradient(300deg, $dark, $pink);
+	background-size: 400% 400%;
+
+	animation: bgGradient 25s ease infinite;
+
+	h1 {
+		color: $white;
+		font-size: 100px;
+		@include media-breakpoint-down(md) {
+			font-size: 50px;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 30px;
+		}
+	}
+	a {
+		z-index: 1;
+	}
+
+	.diamond-container {
+		.triangle {}
+	}
+}
+
+.space {
+	//http://csshexagon.com/
+	.hexagon {
+		position: relative;
+		display: block;
+		float: right;
+		width: 250px; 
+		height: 144.34px;
+		margin: 72.17px 0;
+		border-left: solid 1px $pink;
+		border-right: solid 1px $pink;
+		&::before, &::after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			width: 176.78px;
+			height: 176.78px;
+			-webkit-transform: scaleY(0.5774) rotate(-45deg);
+			-ms-transform: scaleY(0.5774) rotate(-45deg);
+			transform: scaleY(0.5774) rotate(-45deg);
+			background-color: inherit;
+			left: 35.6117px;
+		}
+		&::before {
+			top: -88.3883px;
+			border-top: solid 1.4142px $pink;
+			border-right: solid 1.4142px $pink;
+		}
+		&:after {
+			bottom: -88.3883px;
+			border-bottom: solid 1.4142px $pink;
+			border-left: solid 1.4142px $pink;
+		}
+		@include media-breakpoint-down(sm) {
+			float: left;
+			width: 200px; 
+			height: 115.47px;
+			margin: 57.74px 0;
+			&:before,
+			&:after {
+				width: 141.42px;
+				height: 141.42px;
+				-webkit-transform: scaleY(0.5774) rotate(-45deg);
+				-ms-transform: scaleY(0.5774) rotate(-45deg);
+				transform: scaleY(0.5774) rotate(-45deg);
+				left: 28.2893px;
+			}
+			&:before {
+				top: -70.7107px;
+			}
+			&:after {
+				bottom: -70.7107px;
+			}
+		}
+	}
+}
+
+
+/*
+.test {
+	color: red;
+	clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+*/
+
+
+

@@ -1,0 +1,75 @@
+section.works {
+	margin: 100px 0;
+
+	.work {
+		margin: 15px 0;
+		min-height: 400px;
+		background-color: #FFFAF0;
+		
+		color: $white;
+
+		h2 {
+			color: $white;
+		}
+
+		&.no-img {
+			//background: linear-gradient(300deg, #FFFAF0, #FFE4E1);
+			background: linear-gradient(300deg, $pink, $lightpink);
+			background-size: 400% 400%;
+			animation: bgGradient 10s ease infinite;
+		}
+
+	}
+	a {
+		> * {
+			transition: 0.25s;
+		}
+		
+		&:hover {
+			.work {
+				color: $dark;
+				h2 {
+					color: $dark;
+				}
+			}
+		}
+	}
+}
+
+article {
+
+	section.work-art {
+		height: 50vh;
+	}
+
+	section.work-text {
+		padding: 50px 0;
+
+		.work-header {
+			a {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+}
+
+svg {
+	#path123 {
+		stroke: #000;
+		stroke-width: 1;
+		stroke-dasharray: 100px;
+		stroke-dashoffset: 100px;
+		animation-name: draw;
+		animation-duration: 5s;
+		animation-fill-mode: forwards; // Stay on the last frame
+		animation-iteration-count: 1; // Run only once
+		animation-timing-function: linear;
+	}
+}
+
+@keyframes draw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}

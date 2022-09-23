@@ -1,0 +1,35 @@
+.projects {
+	.project {
+		height: 400px;
+		padding: 20px;
+		transition: 0.3s ease-in-out;
+
+		h3 {
+			background-color: $white;
+			color: $dark;
+			mix-blend-mode: screen;
+		}
+
+		&:hover {
+			//filter: blur(1px);
+			//filter: contrast(110%);
+			//filter: grayscale(70%);
+
+			h3 {
+				//background-color: $link-color;
+			}
+		}
+
+		@media #{$screen-sm} {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+section.blog-posts {
+	.post {
+		@media #{$screen-sm} {
+			margin-bottom: 40px;
+		}
+	}
+}

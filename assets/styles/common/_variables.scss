@@ -1,0 +1,54 @@
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+
+//Colors
+$lightpink: 	#FFC0CB;
+$pink: 			deeppink; //#ff0066;
+$red: 			#ff3535; //#ff4545;
+$blue: 			blue; //#0050ff;//#007bff;
+$yellow: 		yellow;
+
+
+$darkorchid:	#9932CC;
+$darkmagenta:	#8B008B;
+$purple:		#800080;
+$indigo:		#4B0082;
+
+$beige:			#FBF6F3;
+
+
+
+$accent: 		$blue;
+$accent-2: 		$pink;
+$accent-3: 		$yellow;
+$light:			$beige;
+$white: 		#fff;
+$dark: 			#222; ///#1a1a1a;
+$black: 		#2c2c2c;
+$link-color: 	$blue;
+
+
+//Fonts
+$quicksand:		'Quicksand', sans-serif;
+$poppins: 		'Poppins', sans-serif;
+$assistant:		'Assistant', sans-serif;
+$roboto: 		'Roboto', sans-serif;
+$raleway: 		'Raleway', sans-serif;
+$roboto-con:	'Roboto Condensed', sans-serif;
+$montserrat: 	'Montserrat', sans-serif;
+
+$karla: 		'Karla', sans-serif;
+
+
+$heading-font: $karla;
+$text-font: $karla;
+$text-color: $black;
+
+
+//Media queries
+$screen-sm:		"screen and (max-width:767px)";
+$screen-md:		"screen and (max-width:1023px)";
+$screen-lg:		"screen and (max-width:1299px)";
+$screen-xl:		"screen and (max-width:1440px)";

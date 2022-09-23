@@ -1,0 +1,110 @@
+.wrap-main {
+	padding-top: 80px;
+	min-height: calc(100vh - 80px);
+}
+
+.icon-box {
+
+	&:hover {
+		.icon-text {
+			opacity: 1;
+		}	
+	}
+	.icon-text {
+		opacity: 0;
+		transition: all 0.2s ease;
+	}
+	.icon-image {
+
+	}
+}  
+
+.t-wrapper {
+	max-width:300px;
+	margin:auto;
+} 
+
+section.page-404, section.page-search {
+	@include media-breakpoint-down(sm) {
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.mobile-order-first {
+		order: 1;
+	}
+	.mobile-order-last {
+		order: 2;
+	}
+}
+
+.padding {
+
+	&--xsmall {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	&--small {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	&--medium {
+		padding-top: 80px;
+		padding-bottom: 80px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+	}
+	&--large {
+		padding-top: 120px;
+		padding-bottom: 120px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+	}
+	&--xlarge {
+		padding-top: 160px;
+		padding-bottom: 160px;
+		@include media-breakpoint-down(sm) {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+	}
+
+	&--small-bottom {
+		padding-bottom: 40px;
+	}
+	&--large-bottom {
+		padding-bottom: 120px;
+		@include media-breakpoint-down(sm) {
+			padding-bottom: 100px;
+		}
+	}
+
+}
+
+.theme, .bg {
+	&--default {
+
+	}
+	&--light {
+		background-color: $light;
+		color: $black;
+	}
+	&--dark {
+		background-color: $dark;
+		color: $white;
+	}
+	&--accent {
+		background-color: $accent;
+		color: $white;
+	}
+	&--secondary {
+		background-color: $accent-2;
+	}
+	&--tertiary {
+		background-color: $accent-3;
+	}
+}

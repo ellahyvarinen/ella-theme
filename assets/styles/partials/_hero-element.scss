@@ -1,0 +1,46 @@
+@keyframes heroAnimation {
+	0% {
+		background-color: blue;
+	}
+	60% {
+		background-color: blue;
+	}
+	65% {
+		background-color: deeppink;
+	}
+	67% {
+		background-color: blue;
+	}
+	70% {
+		background-color: deeppink;
+	}
+	72% {
+		background-color: blue;
+	}
+	75% {
+		background-color: deeppink;
+	}
+	85% {
+		background-color: deeppink;
+	}
+	86% {
+		background-color: blue;
+	}
+	100% {
+		background-color: blue;
+	}
+}
+
+.hero-element {
+	//height: 100vh;
+	overflow-y: hidden;
+
+	&__text {
+
+	}
+	&__image {
+		animation: heroAnimation 5s ease infinite;
+	}
+}
+
+

@@ -1,0 +1,298 @@
+header.banner {
+	padding: 20px 0;
+	//background-color: $pink;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	@include media-breakpoint-down(sm) {
+		padding: 10px 0;
+	}
+
+	.header-logo {
+		img {
+			height: 40px; //32px;
+			width: auto;
+		}
+	}
+
+	nav {
+		
+		ul {
+			//display: block !important;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			li {
+				//margin-left: 50px;
+				a {
+					color: $white;
+					//text-transform: uppercase;
+
+					&:hover {
+						color: $link-color;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		position: fixed;
+		right: 0;
+		left: 0;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 15px;
+		list-style-type: none;
+		text-align: right;
+
+/*
+			background: linear-gradient(300deg, $dark, #000);
+			background-size: 400% 400%;
+			animation: bgGradient 25s ease infinite;
+			*/
+
+			background-color: rgba(0,0,0,0.2);
+
+			transform-origin: 0% 0%;
+			transform: translate(100%, 0);
+			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+			transition-delay: 0s;
+
+			li {
+				padding: 10px 0;
+				font-size: 2em;
+				width: 100%;
+				display: block;
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+				a {
+					position: relative;
+					display: inline-block;
+					transition: all 0.3s ease-in-out;
+
+					&:after {
+						position: absolute;
+						content: '';
+						height: 1px;
+						width: 100%;
+						left: 0;
+						right: 0;
+						bottom: -5px;
+						background-color: inherit;
+						opacity: 0;
+						transition: all 0.3s ease-in-out;
+					}
+					&:hover {
+						&:after {
+							opacity: 1;
+							bottom: -1px;
+						}
+					}
+				}
+			}
+		}
+
+
+		/* Banner is active */
+		&.active {
+
+			#night-sky {
+				visibility: visible;
+			}
+		/*
+		* Slide menu from left
+		*/
+		#menu {
+			transform: none;
+			//transition-delay: 1s;
+			li {
+				opacity: 1;
+
+				$elements: 15;
+				@for $i from 0 to $elements {
+					&:nth-child(#{$i + 1}) {
+						//transition-delay: 1 + $i * 0.5s; /*#{$i}s;*/
+						transition-delay: $i * 0.1s;
+					}
+				}
+
+				
+			}
+		}
+
+
+		.logo-by-ella {
+			border: 1px solid $pink;
+
+			span {
+				border: 1px solid $pink;
+			} 
+			&:hover {
+				border: 2px solid $pink;
+
+				span {
+					border: 2px solid $pink;
+				}
+			}
+		}
+
+	}
+
+}
+
+#night-sky {
+	position: fixed;
+	visibility: hidden;
+	background: linear-gradient(300deg, $dark, #000);
+	background-size: 400% 400%;
+	animation: bgGradient 25s ease infinite;
+	transition: all 0.3s ease-in-out;
+}
+
+
+
+.immediate {
+	transition-delay: 0s !important; 
+}
+
+
+
+/*
+ * Just a quick hamburger
+ */
+ #hamburger {
+ 	cursor: pointer;
+ 	width: 80px;
+ 	height: 80px;
+ 	padding: 20px;
+ 	display: block;
+ 	z-index: 100;
+ 	position: fixed;
+ 	top: 0;
+ 	right: 0;
+ 	background-color: $accent;
+
+ 	@include media-breakpoint-down(sm) {
+ 		width: 60px;
+ 		height: 60px;
+ 		padding: 10px;
+ 	}
+
+ 	.wrapper {
+ 		position: relative;
+ 		margin-top: -5px;
+ 	}
+
+ 	span {
+ 		display: block;
+ 		width: 40px;
+ 		height: 3px;
+ 		margin: 10px 0;
+ 		background: $dark;
+ 		border-radius: 0;
+ 		transition: all 0.15s ease-in-out;
+
+ 		&:first-child {
+ 		}
+
+ 	}
+
+ 	&.active {
+ 		span {
+ 			//opacity: 1;
+
+ 			&:first-child {
+ 				transform: rotate(-45deg);
+ 				transform-origin: right;
+ 				width: 45px;
+ 				margin-left: -10px;
+ 			}
+ 			&:last-child {
+ 				transform: rotate(45deg);
+ 				transform-origin: right;
+ 				width: 45px;
+ 				margin-left: -10px;
+ 			}
+
+ 			&:nth-child(2) {
+ 				//opacity: 0;
+ 			}
+
+ 		}
+ 	}
+
+ }
+
+
+
+ body.home {
+ 	header {
+
+ 		.logo-by-ella {
+ 			border: 1px solid $white;
+
+ 			span {
+ 				border: 1px solid $white;
+ 			} 
+ 			&:hover {
+ 				border: 2px solid $white;
+
+ 				span {
+ 					border: 2px solid $white;
+ 				}
+ 			}
+ 		}
+
+ 	}
+ }
+
+ .logo-by-ella {
+ 	position: relative;
+ 	z-index: 100;
+ 	border: 1px solid $pink;
+ 	width: 40px;
+ 	height: 40px;
+ 	transform: rotate(45deg);
+ 	transition: all 0.2s ease;
+
+ 	span {
+ 		position: absolute;
+ 		border: 1px solid $pink;
+ 		width: 20px;
+ 		height: 20px;
+ 		transition: all 0.2s ease-in-out;
+
+ 		&:nth-child(1) {
+ 			top: 0;
+ 			left: 0;
+ 		}
+ 		&:nth-child(2) {
+ 			top: 0;
+ 			right: 0;
+ 		}
+ 		&:nth-child(3) {
+ 			bottom: 0;
+ 			left: 0;
+ 		}
+ 		&:nth-child(4) {
+ 			bottom: 0;
+ 			right: 0;
+ 		}
+ 	}
+
+ 	&:hover {
+ 		border: 2px solid $pink;
+
+ 		span {
+ 			border: 2px solid $pink;
+ 		}
+ 	}
+ }
