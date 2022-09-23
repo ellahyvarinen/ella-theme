@@ -65,7 +65,6 @@ function redirect_to_home() {
 //add_filter( 'init', 'redirect_to_home' );
 
 
-
 // Hide WordPress REST API users from non-registered users
 /*
 add_filter( 'rest_authentication_errors', function( $result ) {
